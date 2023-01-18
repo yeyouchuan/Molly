@@ -1,6 +1,8 @@
 import { Fraunces, Inter } from '@next/font/google';
 import Head from 'next/head';
 
+import { IntroCard } from '@/components/IntroCard';
+
 const inter = Inter({
   weight: ['300', '400'],
   subsets: ['latin'],
@@ -22,10 +24,33 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${inter.variable} ${fraunces.variable} font-sans`}>
-        <h1 className="font-serif-variation font-serif text-4xl font-light">
-          Hello world
-        </h1>
+      <main
+        className={`${inter.variable} ${fraunces.variable} w-full p-3 font-sans`}
+      >
+        <div className="grid grid-flow-row-dense grid-cols-3 md:grid-cols-4">
+          <IntroCard />
+          <div className="col-span-2 aspect-[2] px-1 pb-2">
+            <div className="h-full w-full rounded-xl bg-stone-100" />
+          </div>
+          <div className="aspect-square px-1 pb-2">
+            <div className="h-full w-full rounded-xl bg-stone-100" />
+          </div>
+          <div className="aspect-square px-1 pb-2">
+            <div className="h-full w-full rounded-xl bg-stone-100" />
+          </div>
+          <div className="aspect-square px-1 pb-2">
+            <div className="h-full w-full rounded-xl bg-stone-100" />
+          </div>
+          <div className="col-span-2 aspect-[2] px-1 pb-2">
+            <div className="h-full w-full rounded-xl bg-stone-100" />
+          </div>
+          <div className="aspect-square px-1 pb-2">
+            <div className="h-full w-full rounded-xl bg-stone-100" />
+          </div>
+          <div className="aspect-square px-1 pb-2">
+            <div className="h-full w-full rounded-xl bg-stone-100" />
+          </div>
+        </div>
       </main>
     </>
   );
