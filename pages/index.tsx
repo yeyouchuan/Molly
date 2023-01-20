@@ -1,6 +1,8 @@
 import { Fraunces, Inter } from '@next/font/google';
+import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 
+import { Card } from '@/components/Card';
 import { IntroCard } from '@/components/IntroCard';
 import { ProjectCard } from '@/components/ProjectCard';
 import { supabase } from '@/lib/supabaseClient';
@@ -17,12 +19,10 @@ const fraunces = Fraunces({
   variable: '--font-fraunces',
 });
 
-type HomeProps = {
-  featured: any[];
-};
-
-export default function Home(props: HomeProps) {
-  console.log(props);
+export default function Home(
+  props: InferGetStaticPropsType<typeof getStaticProps>
+) {
+  console.log(props.featured);
 
   return (
     <>
@@ -37,6 +37,11 @@ export default function Home(props: HomeProps) {
       >
         <div className="grid grid-flow-row-dense grid-cols-3 md:grid-cols-4">
           <IntroCard />
+          {props.featured?.map(({ card }) =>
+            card && !Array.isArray(card) ? (
+              <Card key={card.id} {...card} />
+            ) : null
+          )}
           <ProjectCard
             name="Is It Toxic To?"
             link="https://iitt.chester.how/"
@@ -67,15 +72,11 @@ export default function Home(props: HomeProps) {
   );
 }
 
-async function getFeatured() {
-  return await supabase
-    .from('featured')
-    .select('card:cards(*), ordering')
-    .order('ordering');
-}
-
 export async function getStaticProps() {
-  const { data: featured } = await getFeatured();
+  const { data: featured } = await supabase
+    .from('featured')
+    .select('ordering, card:cards(*)')
+    .order('ordering');
 
   return {
     props: {
