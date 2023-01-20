@@ -42,30 +42,6 @@ export default function Home(
               <Card key={card.id} {...card} />
             ) : null
           )}
-          <ProjectCard
-            name="Is It Toxic To?"
-            link="https://iitt.chester.how/"
-            large
-          />
-          <ProjectCard
-            name="Billbreak"
-            link="https://apps.apple.com/sg/app/billbreak-split-group-bills/id1640687547"
-          />
-          <div className="aspect-square px-1 pb-2">
-            <div className="h-full w-full rounded-lg bg-stone-100" />
-          </div>
-          <div className="aspect-square px-1 pb-2">
-            <div className="h-full w-full rounded-lg bg-stone-100" />
-          </div>
-          <div className="col-span-2 aspect-[2] px-1 pb-2">
-            <div className="h-full w-full rounded-lg bg-stone-100" />
-          </div>
-          <div className="aspect-square px-1 pb-2">
-            <div className="h-full w-full rounded-lg bg-stone-100" />
-          </div>
-          <div className="aspect-square px-1 pb-2">
-            <div className="h-full w-full rounded-lg bg-stone-100" />
-          </div>
         </div>
       </main>
     </>

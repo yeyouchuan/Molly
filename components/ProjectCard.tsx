@@ -1,26 +1,30 @@
-import classNames from 'classnames';
+import Image from 'next/image';
 
 type ProjectCardProps = {
   name: string;
-  link: string;
-  large?: boolean;
+  url: string;
+  imageUrl: string;
 };
 
-export function ProjectCard({ name, link, large = false }: ProjectCardProps) {
+export function ProjectCard(props: ProjectCardProps) {
   return (
-    <div
-      className={classNames(
-        large ? 'col-span-2 aspect-[2]' : 'aspect-square',
-        'px-1 pb-2'
-      )}
-    >
-      <div className="h-full w-full rounded-lg bg-stone-100 p-4">
-        <div className="flex justify-between font-light -tracking-[0.03em] text-stone-500 antialiased">
-          <span>Projects / {name}</span>
-          <a href={link} target="_blank" rel="noreferrer">
-            ↗
-          </a>
-        </div>
+    <div className="group relative h-full w-full">
+      <Image
+        src={props.imageUrl}
+        alt={props.name}
+        fill
+        className="object-contain !top-14"
+      />
+      <div className="flex justify-between p-4 font-light -tracking-[0.03em] text-stone-500  antialiased">
+        <span>Projects / {props.name}</span>
+        <a
+          href={props.url}
+          target="_blank"
+          rel="noreferrer"
+          className="cursor-pointer"
+        >
+          ↗
+        </a>
       </div>
     </div>
   );
