@@ -2,6 +2,8 @@ import { Fraunces, Inter } from '@next/font/google';
 import Head from 'next/head';
 
 import { IntroCard } from '@/components/IntroCard';
+import { ProjectCard } from '@/components/ProjectCard';
+import { supabase } from '@/lib/supabaseClient';
 
 const inter = Inter({
   weight: ['300', '400'],
@@ -15,7 +17,13 @@ const fraunces = Fraunces({
   variable: '--font-fraunces',
 });
 
-export default function Home() {
+type HomeProps = {
+  featured: any[];
+};
+
+export default function Home(props: HomeProps) {
+  console.log(props);
+
   return (
     <>
       <Head>
@@ -29,29 +37,49 @@ export default function Home() {
       >
         <div className="grid grid-flow-row-dense grid-cols-3 md:grid-cols-4">
           <IntroCard />
+          <ProjectCard
+            name="Is It Toxic To?"
+            link="https://iitt.chester.how/"
+            large
+          />
+          <ProjectCard
+            name="Billbreak"
+            link="https://apps.apple.com/sg/app/billbreak-split-group-bills/id1640687547"
+          />
+          <div className="aspect-square px-1 pb-2">
+            <div className="h-full w-full rounded-lg bg-stone-100" />
+          </div>
+          <div className="aspect-square px-1 pb-2">
+            <div className="h-full w-full rounded-lg bg-stone-100" />
+          </div>
           <div className="col-span-2 aspect-[2] px-1 pb-2">
-            <div className="h-full w-full rounded-xl bg-stone-100" />
+            <div className="h-full w-full rounded-lg bg-stone-100" />
           </div>
           <div className="aspect-square px-1 pb-2">
-            <div className="h-full w-full rounded-xl bg-stone-100" />
+            <div className="h-full w-full rounded-lg bg-stone-100" />
           </div>
           <div className="aspect-square px-1 pb-2">
-            <div className="h-full w-full rounded-xl bg-stone-100" />
-          </div>
-          <div className="aspect-square px-1 pb-2">
-            <div className="h-full w-full rounded-xl bg-stone-100" />
-          </div>
-          <div className="col-span-2 aspect-[2] px-1 pb-2">
-            <div className="h-full w-full rounded-xl bg-stone-100" />
-          </div>
-          <div className="aspect-square px-1 pb-2">
-            <div className="h-full w-full rounded-xl bg-stone-100" />
-          </div>
-          <div className="aspect-square px-1 pb-2">
-            <div className="h-full w-full rounded-xl bg-stone-100" />
+            <div className="h-full w-full rounded-lg bg-stone-100" />
           </div>
         </div>
       </main>
     </>
   );
+}
+
+async function getFeatured() {
+  return await supabase
+    .from('featured')
+    .select('card:cards(*), ordering')
+    .order('ordering');
+}
+
+export async function getStaticProps() {
+  const { data: featured } = await getFeatured();
+
+  return {
+    props: {
+      featured,
+    },
+  };
 }
