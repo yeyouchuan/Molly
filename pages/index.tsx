@@ -4,7 +4,6 @@ import Head from 'next/head';
 
 import { Card } from '@/components/Card';
 import { IntroCard } from '@/components/IntroCard';
-import { ProjectCard } from '@/components/ProjectCard';
 import { supabase } from '@/lib/supabaseClient';
 
 const inter = Inter({
@@ -22,8 +21,6 @@ const fraunces = Fraunces({
 export default function Home(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
-  console.log(props.featured);
-
   return (
     <>
       <Head>
@@ -33,7 +30,7 @@ export default function Home(
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className={`${inter.variable} ${fraunces.variable} w-full p-3 font-sans`}
+        className={`${inter.variable} ${fraunces.variable} mx-auto w-full max-w-screen-2xl p-3 font-sans`}
       >
         <div className="grid grid-flow-row-dense grid-cols-3 md:grid-cols-4">
           <IntroCard />

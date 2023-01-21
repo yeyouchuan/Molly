@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
-type ProjectCardProps = {
-  name: string;
-  url: string;
-  imageUrl: string;
-};
+import { ProjectsProperties } from '@/lib/utils/isProjectsProperties';
+
+import { CardHeader } from './CardHeader';
+
+type ProjectCardProps = ProjectsProperties;
 
 export function ProjectCard(props: ProjectCardProps) {
   return (
@@ -13,19 +13,10 @@ export function ProjectCard(props: ProjectCardProps) {
         src={props.imageUrl}
         alt={props.name}
         fill
-        className="object-contain !top-14"
+        className="!top-14 object-contain"
       />
-      <div className="flex justify-between p-4 font-light -tracking-[0.03em] text-stone-500  antialiased">
-        <span>Projects / {props.name}</span>
-        <a
-          href={props.url}
-          target="_blank"
-          rel="noreferrer"
-          className="cursor-pointer"
-        >
-          ↗
-        </a>
-      </div>
+
+      <CardHeader breadcrumbs={`Projects / ${props.name}`} url={props.url} />
     </div>
   );
 }

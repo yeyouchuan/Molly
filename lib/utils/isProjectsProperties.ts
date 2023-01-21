@@ -1,4 +1,4 @@
-type ProjectsProperties = {
+export type ProjectsProperties = {
   name: string;
   url: string;
   imageUrl: string;

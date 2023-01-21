@@ -2,7 +2,7 @@ export function IntroCard() {
   return (
     <div className="col-span-2 row-span-2 aspect-square px-1 pb-2">
       <div className="h-full w-full p-8">
-        <h1 className="font-serif-configured font-serif text-4xl font-extralight leading-tight -tracking-[0.03em] text-stone-500">
+        <h1 className="font-serif-variation font-serif text-4xl font-light leading-tight text-stone-500">
           Hello I’m <span className="text-black">Chester</span> 👋 Welcome to my
           digital garden 🌱 I like building things, and I’m currently helping to
           build <span className="text-black">Mobbin</span>.
