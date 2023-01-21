@@ -2,9 +2,11 @@ import classNames from 'classnames';
 
 import { Database } from '@/lib/database.types';
 import { isProjectsProperties } from '@/lib/utils/isProjectsProperties';
+import { isReadingProperties } from '@/lib/utils/isReadingProperties';
 import { isWritingProperties } from '@/lib/utils/isWritingProperties';
 
 import { ProjectCard } from './ProjectCard';
+import { ReadingCard } from './ReadingCard';
 import { WritingCard } from './WritingCard';
 
 type CardProps = Database['public']['Tables']['cards']['Row'];
@@ -18,6 +20,11 @@ export function Card(props: CardProps) {
       isWritingProperties(props.properties)
     ) {
       return <WritingCard {...props.properties} />;
+    } else if (
+      props.type === 'Reading' &&
+      isReadingProperties(props.properties)
+    ) {
+      return <ReadingCard {...props.properties} />;
     } else {
       return null;
     }
