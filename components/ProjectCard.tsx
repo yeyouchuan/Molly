@@ -8,12 +8,12 @@ type ProjectCardProps = ProjectsProperties;
 
 export function ProjectCard(props: ProjectCardProps) {
   return (
-    <div className="relative h-full w-full">
+    <div className="relative isolate h-full w-full">
       <Image
         src={props.imageUrl}
         alt={props.name}
         fill
-        className="!top-14 object-contain"
+        className="-z-10 object-contain transition-transform group-hover:scale-105"
       />
 
       <CardHeader
