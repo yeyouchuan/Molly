@@ -8,7 +8,7 @@ type ProjectCardProps = ProjectsProperties;
 
 export function ProjectCard(props: ProjectCardProps) {
   return (
-    <div className="group relative h-full w-full">
+    <div className="relative h-full w-full">
       <Image
         src={props.imageUrl}
         alt={props.name}

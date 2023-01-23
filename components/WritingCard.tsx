@@ -13,10 +13,10 @@ export function WritingCard(props: WritingCardProps) {
         <h3 className="font-serif-variation font-serif text-3xl font-light">
           {props.title}
         </h3>
-        <span className="mt-2 mb-4 block font-light italic -tracking-[0.03em] text-stone-500">
+        <span className="mt-2 mb-4 block text-sm italic -tracking-[0.03em] text-neutral-400">
           {props.publishedOn}
         </span>
-        <p className="leading-relaxed text-stone-800 line-clamp-4">
+        <p className="leading-relaxed text-neutral-700 line-clamp-4">
           {props.contentPreview}
         </p>
       </div>

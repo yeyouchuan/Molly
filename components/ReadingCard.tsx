@@ -14,15 +14,15 @@ export function ReadingCard(props: ReadingCardProps) {
         <img
           src={props.imageUrl}
           alt={props.title}
-          className="rounded shadow-lg"
+          className="rounded shadow-lg transition-transform group-hover:-rotate-3 group-hover:scale-110 group-hover:shadow-xl"
         />
 
         <div className=" -tracking-[0.03em]">
-          <div className="mb-3 inline-block rounded bg-amber-400/40 px-2 text-sm font-light">
+          <div className="inline-block rounded bg-amber-400/40 px-2 text-sm text-neutral-900/75">
             <span>{props.status}</span>
           </div>
-          <h3>{props.title}</h3>
-          <span className="text-stone-500">{props.author}</span>
+          <h3 className="mt-3">{props.title}</h3>
+          <span className="text-neutral-400">{props.author}</span>
         </div>
       </div>
     </div>

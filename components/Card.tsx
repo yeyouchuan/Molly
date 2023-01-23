@@ -37,7 +37,7 @@ export function Card(props: CardProps) {
         'px-1 pb-2'
       )}
     >
-      <div className="h-full w-full overflow-hidden rounded-lg bg-stone-100">
+      <div className="group h-full w-full overflow-hidden rounded-lg bg-neutral-50 hover:bg-neutral-100">
         {renderSpecificCard()}
       </div>
     </div>

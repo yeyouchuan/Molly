@@ -5,7 +5,7 @@ type CardHeaderProps = {
 
 export function CardHeader(props: CardHeaderProps) {
   return (
-    <div className="flex justify-between p-4 font-light -tracking-[0.03em] text-stone-500">
+    <div className="flex justify-between p-4 text-sm tracking-tight text-neutral-400">
       <span>{props.breadcrumbs}</span>
       <a
         href={props.url}
