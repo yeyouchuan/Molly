@@ -7,7 +7,7 @@ type WritingCardProps = WritingProperties;
 export function WritingCard(props: WritingCardProps) {
   return (
     <div className="flex h-full w-full flex-col justify-between">
-      <CardHeader breadcrumbs={`Writing / ${props.type}`} url={props.url} />
+      <CardHeader category="Writing" subcategory={props.type} url={props.url} />
 
       <div className="p-5">
         <h3 className="font-serif-variation font-serif text-3xl font-light">

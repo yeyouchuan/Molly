@@ -16,7 +16,11 @@ export function ProjectCard(props: ProjectCardProps) {
         className="!top-14 object-contain"
       />
 
-      <CardHeader breadcrumbs={`Projects / ${props.name}`} url={props.url} />
+      <CardHeader
+        category="Projects"
+        subcategory={props.name}
+        url={props.url}
+      />
     </div>
   );
 }
