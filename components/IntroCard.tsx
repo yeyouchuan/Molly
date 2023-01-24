@@ -3,9 +3,18 @@ export function IntroCard() {
     <div className="col-span-2 row-span-2 aspect-square px-1 pb-2">
       <div className="h-full w-full p-8">
         <h1 className="font-serif-variation font-serif text-4xl font-light leading-tight text-neutral-400">
-          Hello I’m <span className="text-neutral-900">Chester</span> 👋 Welcome
-          to my digital garden 🌱 I like building things, and I’m currently
-          helping to build <span className="text-black">Mobbin</span>.
+          Hello I’m <span className="text-neutral-900">Chester</span> 👋&nbsp;
+          Welcome to my digital garden 🌱 I like building things, and I’m
+          currently helping to build{' '}
+          <a
+            href="https://mobbin.com"
+            target="_blank"
+            rel="noreferrer"
+            className="cursor-alias text-neutral-900 decoration-wavy underline-offset-4 hover:font-sans hover:font-bold hover:underline"
+          >
+            Mobbin
+          </a>
+          .
           <br />
           <br />
           In my free time, I enjoy brewing{' '}

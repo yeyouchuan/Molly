@@ -32,7 +32,7 @@ export default function Home(
       <main
         className={`${inter.variable} ${fraunces.variable} mx-auto w-full max-w-screen-2xl p-3 font-sans`}
       >
-        <div className="grid grid-flow-row-dense grid-cols-3 md:grid-cols-4">
+        <div className="grid grid-flow-row-dense grid-cols-3 lg:grid-cols-4">
           <IntroCard />
           {props.featured?.map(({ card }) =>
             card && !Array.isArray(card) ? (

@@ -1,10 +1,12 @@
 import classNames from 'classnames';
 
 import { Database } from '@/lib/database.types';
+import { isClimbingProperties } from '@/lib/utils/isClimbingProperties';
 import { isProjectsProperties } from '@/lib/utils/isProjectsProperties';
 import { isReadingProperties } from '@/lib/utils/isReadingProperties';
 import { isWritingProperties } from '@/lib/utils/isWritingProperties';
 
+import { ClimbingCard } from './ClimbingCard';
 import { ProjectCard } from './ProjectCard';
 import { ReadingCard } from './ReadingCard';
 import { WritingCard } from './WritingCard';
@@ -25,6 +27,11 @@ export function Card(props: CardProps) {
       isReadingProperties(props.properties)
     ) {
       return <ReadingCard {...props.properties} />;
+    } else if (
+      props.type === 'Climbing' &&
+      isClimbingProperties(props.properties)
+    ) {
+      return <ClimbingCard {...props.properties} />;
     } else {
       return null;
     }
