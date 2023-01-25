@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { ReadingProperties } from '@/lib/utils/isReadingProperties';
 
 import { CardHeader } from './CardHeader';

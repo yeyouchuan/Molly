@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
-import { ClimbingProperties } from '@/lib/utils/isClimbingProperties';
+import { PlantsProperties } from '@/lib/utils/isPlantsProperties';
 
 import { CardHeader } from './CardHeader';
 
-type ClimbingCardProps = ClimbingProperties;
+type PlantCardProps = PlantsProperties;
 
-export function ClimbingCard(props: ClimbingCardProps) {
+export function PlantCard(props: PlantCardProps) {
   return (
     <div className="relative h-full w-full">
       <Image
@@ -16,11 +16,7 @@ export function ClimbingCard(props: ClimbingCardProps) {
         className="rounded-lg object-cover transition-all group-hover:mt-12"
       />
 
-      <CardHeader
-        category="Climbing"
-        subcategory={props.label}
-        url={props.url}
-      />
+      <CardHeader category="Plants" subcategory={props.label} />
     </div>
   );
 }

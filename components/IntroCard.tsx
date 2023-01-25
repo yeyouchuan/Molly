@@ -10,7 +10,7 @@ export function IntroCard() {
             href="https://mobbin.com"
             target="_blank"
             rel="noreferrer"
-            className="cursor-alias text-neutral-900 decoration-wavy underline-offset-4 hover:font-sans hover:font-bold hover:underline"
+            className="cursor-alias text-neutral-900 hover:underline"
           >
             Mobbin
           </a>
