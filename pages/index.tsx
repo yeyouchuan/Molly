@@ -30,9 +30,9 @@ export default function Home(
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className={`${inter.variable} ${fraunces.variable} mx-auto w-full max-w-screen-2xl p-3 font-sans`}
+        className={`${inter.variable} ${fraunces.variable} mx-auto w-full max-w-screen-sm p-3 font-sans md:max-w-screen-lg xl:max-w-screen-2xl`}
       >
-        <div className="grid grid-flow-row-dense grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-flow-row-dense grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
           <IntroCard />
           {props.featured?.map(({ card }) =>
             card && !Array.isArray(card) ? (
