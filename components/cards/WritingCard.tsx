@@ -1,6 +1,6 @@
 import { WritingProperties } from '@/lib/utils/isWritingProperties';
 
-import { CardHeader } from './CardHeader';
+import { CardHeader } from '../CardHeader';
 
 type WritingCardProps = WritingProperties;
 

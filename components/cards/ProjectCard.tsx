@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { ProjectsProperties } from '@/lib/utils/isProjectsProperties';
 
-import { CardHeader } from './CardHeader';
+import { CardHeader } from '../CardHeader';
 
 type ProjectCardProps = ProjectsProperties;
 

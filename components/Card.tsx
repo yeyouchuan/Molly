@@ -8,12 +8,14 @@ import { isProjectsProperties } from '@/lib/utils/isProjectsProperties';
 import { isReadingProperties } from '@/lib/utils/isReadingProperties';
 import { isWritingProperties } from '@/lib/utils/isWritingProperties';
 
-import { ClimbingCard } from './ClimbingCard';
-import { CoffeeCard } from './CoffeeCard';
-import { PlantCard } from './PlantCard';
-import { ProjectCard } from './ProjectCard';
-import { ReadingCard } from './ReadingCard';
-import { WritingCard } from './WritingCard';
+import {
+  ClimbingCard,
+  CoffeeCard,
+  PlantCard,
+  ProjectCard,
+  ReadingCard,
+  WritingCard,
+} from './cards';
 
 type CardProps = Database['public']['Tables']['cards']['Row'];
 

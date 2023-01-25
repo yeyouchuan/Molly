@@ -3,7 +3,7 @@ import { InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 
 import { Card } from '@/components/Card';
-import { IntroCard } from '@/components/IntroCard';
+import { IntroCard } from '@/components/cards';
 import { supabase } from '@/lib/supabaseClient';
 
 const inter = Inter({

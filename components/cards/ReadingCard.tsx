@@ -1,7 +1,7 @@
 import { ReadingProperties } from '@/lib/utils/isReadingProperties';
 
-import { CardHeader } from './CardHeader';
-import { StatusTag } from './StatusTag';
+import { CardHeader } from '../CardHeader';
+import { StatusTag } from '../StatusTag';
 
 type ReadingCardProps = ReadingProperties;
 

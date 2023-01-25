@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { PlantsProperties } from '@/lib/utils/isPlantsProperties';
 
-import { CardHeader } from './CardHeader';
+import { CardHeader } from '../CardHeader';
 
 type PlantCardProps = PlantsProperties;
 

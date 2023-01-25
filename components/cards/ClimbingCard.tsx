@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { ClimbingProperties } from '@/lib/utils/isClimbingProperties';
 
-import { CardHeader } from './CardHeader';
+import { CardHeader } from '../CardHeader';
 
 type ClimbingCardProps = ClimbingProperties;
 
