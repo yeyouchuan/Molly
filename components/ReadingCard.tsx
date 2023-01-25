@@ -1,6 +1,7 @@
 import { ReadingProperties } from '@/lib/utils/isReadingProperties';
 
 import { CardHeader } from './CardHeader';
+import { StatusTag } from './StatusTag';
 
 type ReadingCardProps = ReadingProperties;
 
@@ -18,9 +19,7 @@ export function ReadingCard(props: ReadingCardProps) {
         />
 
         <div className="-tracking-[0.03em]">
-          <div className="inline-block rounded bg-amber-400/40 px-2 text-sm text-neutral-900/75">
-            <span>{props.status}</span>
-          </div>
+          <StatusTag status={props.status} color="amber" />
           <h3 className="mt-3 line-clamp-3">{props.title}</h3>
           <span className="text-neutral-400">{props.author}</span>
         </div>

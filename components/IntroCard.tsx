@@ -18,14 +18,22 @@ export function IntroCard() {
           <br />
           <br />
           In my free time, I enjoy brewing{' '}
-          <span className="text-neutral-900">coffee</span>, tending to my{' '}
-          <span className="text-neutral-900">plants</span>, and&nbsp;
-          <span className="text-neutral-900">climbing</span> (plastic) rocks.
+          <span className="text-neutral-900 hover:underline">coffee</span>,
+          tending to my{' '}
+          <span className="text-neutral-900 hover:underline">plants</span>,
+          and&nbsp;
+          <span className="text-neutral-900 hover:underline">
+            climbing
+          </span>{' '}
+          (plastic) rocks.
           <br />
-          <br />I do some <span className="text-neutral-900">
+          <br />I do some{' '}
+          <span className="text-neutral-900 hover:underline">
             reading
-          </span> and <span className="text-neutral-900">writing</span> as well,
-          albeit not as consistently, but I’m working on being better at that.
+          </span> and{' '}
+          <span className="text-neutral-900 hover:underline">writing</span> as
+          well, albeit not as consistently, but I’m working on being better at
+          that.
         </h1>
       </div>
     </div>
