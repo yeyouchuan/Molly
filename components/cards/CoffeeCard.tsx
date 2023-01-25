@@ -11,14 +11,12 @@ export function CoffeeCard(props: CoffeeCardProps) {
       <CardHeader category="Coffee" subcategory={props.type} />
 
       <div className="p-5">
-        <div className="flex gap-1">
-          <StatusTag status="Now brewing" color="orange" />
-        </div>
+        <StatusTag status="Now brewing" color="orange" />
         <h3 className="font-serif-variation mt-3 mb-5 font-serif text-6xl font-light">
           {props.name}
         </h3>
         <p className="text-neutral-400">
-          <span>{props.origin}</span>&nbsp;·&nbsp;<span>{props.roaster}</span>
+          <span>{props.origin}</span> · <span>{props.roaster}</span>
         </p>
         <p className="text-neutral-700">{props.notes}</p>
       </div>

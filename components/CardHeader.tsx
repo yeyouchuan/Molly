@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import Link from 'next/link';
 
 type CardHeaderProps = {
   category: string;
@@ -10,12 +11,15 @@ export function CardHeader(props: CardHeaderProps) {
   return (
     <div className="flex items-center justify-between pl-4 pr-2 pt-2 text-sm tracking-tight text-neutral-400">
       <span className="py-1.5">
-        <span className="cursor-pointer transition-all hover:text-neutral-500 hover:underline">
+        <Link
+          href={`/${props.category.toLowerCase()}`}
+          className="transition-colors hover:text-neutral-500 hover:underline"
+        >
           {props.category}
-        </span>
-        &nbsp;·&nbsp;
-        {props.subcategory}
+        </Link>
+        &nbsp;·&nbsp;{props.subcategory}
       </span>
+
       {props.url !== undefined && (
         <a
           href={props.url}
