@@ -1,4 +1,5 @@
 const { fontFamily } = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -13,6 +14,20 @@ module.exports = {
         serif: ['var(--font-fraunces)', ...fontFamily.serif],
       },
     },
+    keyframes: {
+      scale: {
+        from: { transform: 'scale(0.5)' },
+        to: { transform: 'scale(1)' },
+      },
+    },
+    animation: {
+      scale: 'scale 50ms ease-in-out',
+    },
   },
-  plugins: [require('@tailwindcss/line-clamp')],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    plugin(function ({ addVariant }) {
+      addVariant('data-delayed-open', "&[data-state='delayed-open']");
+    }),
+  ],
 };

@@ -1,5 +1,8 @@
 import classNames from 'classnames';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+import { Tooltip } from './Tooltip';
 
 type CardHeaderProps = {
   category: string;
@@ -8,15 +11,27 @@ type CardHeaderProps = {
 };
 
 export function CardHeader(props: CardHeaderProps) {
+  const router = useRouter();
+  const pathname = router.query.type;
+
   return (
     <div className="flex items-center justify-between pl-4 pr-2 pt-2 text-sm tracking-tight text-neutral-400">
       <span className="py-1.5">
-        <Link
-          href={`/${props.category.toLowerCase()}`}
-          className="transition-colors hover:text-neutral-500 hover:underline"
-        >
-          {props.category}
-        </Link>
+        {pathname === props.category.toLowerCase() ? (
+          props.category
+        ) : (
+          <Tooltip
+            content={`Browse ${props.category.toLowerCase()}`}
+            side="bottom"
+          >
+            <Link
+              href={`/${props.category.toLowerCase()}`}
+              className="transition-colors hover:text-neutral-500 hover:underline"
+            >
+              {props.category}
+            </Link>
+          </Tooltip>
+        )}
         &nbsp;·&nbsp;{props.subcategory}
       </span>
 
