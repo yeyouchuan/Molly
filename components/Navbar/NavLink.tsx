@@ -3,23 +3,24 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 type NavLinkProps = {
-  type?: string;
+  path: string;
   children: string;
-};
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export function NavLink(props: NavLinkProps) {
+  const { path, children, ...anchorProps } = props;
   const router = useRouter();
-  const pathname = router.query.type;
 
   return (
     <Link
-      href={`/${props.type ?? ''}`}
+      href={path}
       className={classNames(
-        'text-neutral-400 hover:underline',
-        (pathname === props.type ?? '') && 'text-neutral-900 underline'
+        'rounded py-1 px-2 transition-colors hover:text-neutral-900',
+        router.asPath === path ? 'text-neutral-900' : 'text-neutral-500'
       )}
+      {...anchorProps}
     >
-      {props.children}
+      {children}
     </Link>
   );
 }

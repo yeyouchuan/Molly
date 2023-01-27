@@ -7,7 +7,7 @@ type ReadingCardProps = ReadingProperties;
 
 export function ReadingCard(props: ReadingCardProps) {
   return (
-    <div className="flex h-full w-full flex-col">
+    <div className="isolate flex h-full w-full flex-col">
       <CardHeader
         type="Reading"
         label={props.type}

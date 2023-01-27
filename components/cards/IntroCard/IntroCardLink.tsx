@@ -14,7 +14,7 @@ export function IntroCardLink(props: IntroCardLinkProps) {
         href={props.href}
         target="_blank"
         rel="noreferrer"
-        className="cursor-alias text-neutral-900  decoration-wavy hover:underline"
+        className="cursor-alias text-neutral-900  decoration-sky-400 decoration-wavy hover:underline"
       >
         {props.children}
       </a>
@@ -23,7 +23,10 @@ export function IntroCardLink(props: IntroCardLinkProps) {
 
   // Internal link
   return (
-    <Link href={props.href} className="text-neutral-900 hover:underline">
+    <Link
+      href={props.href}
+      className="text-neutral-900 decoration-orange-400 hover:underline"
+    >
       {props.children}
     </Link>
   );
