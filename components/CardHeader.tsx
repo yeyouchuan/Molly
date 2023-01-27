@@ -5,10 +5,18 @@ import { useRouter } from 'next/router';
 import { Tooltip } from './Tooltip';
 
 type CardHeaderProps = {
-  category: string;
-  subcategory: string;
-  url?: string;
-};
+  type: string;
+  label: string;
+} & (
+  | {
+      url: string;
+      urlTooltipLabel: string;
+    }
+  | {
+      url?: never;
+      urlTooltipLabel?: never;
+    }
+);
 
 export function CardHeader(props: CardHeaderProps) {
   const router = useRouter();
@@ -17,37 +25,36 @@ export function CardHeader(props: CardHeaderProps) {
   return (
     <div className="flex items-center justify-between pl-4 pr-2 pt-2 text-sm tracking-tight text-neutral-400">
       <span className="py-1.5">
-        {pathname === props.category.toLowerCase() ? (
-          props.category
+        {pathname === props.type.toLowerCase() ? (
+          props.type
         ) : (
-          <Tooltip
-            content={`Browse ${props.category.toLowerCase()}`}
-            side="bottom"
-          >
+          <Tooltip content={`Browse ${props.type.toLowerCase()}`} side="bottom">
             <Link
-              href={`/${props.category.toLowerCase()}`}
+              href={`/${props.type.toLowerCase()}`}
               className="transition-colors hover:text-neutral-500 hover:underline"
             >
-              {props.category}
+              {props.type}
             </Link>
           </Tooltip>
         )}
-        &nbsp;·&nbsp;{props.subcategory}
+        &nbsp;·&nbsp;{props.label}
       </span>
 
-      {props.url !== undefined && (
-        <a
-          href={props.url}
-          target="_blank"
-          rel="noreferrer"
-          className={classNames(
-            'flex h-8 w-8 items-center justify-center rounded-full',
-            // State: hover
-            'cursor-pointer transition-colors group-hover:bg-white group-hover:text-neutral-900'
-          )}
-        >
-          ↗
-        </a>
+      {typeof props.url === 'string' && (
+        <Tooltip content={props.urlTooltipLabel} side="left">
+          <a
+            href={props.url}
+            target="_blank"
+            rel="noreferrer"
+            className={classNames(
+              'flex h-8 w-8 items-center justify-center rounded-full',
+              // State: hover
+              'cursor-alias transition-colors group-hover:bg-white group-hover:text-neutral-900'
+            )}
+          >
+            ↗
+          </a>
+        </Tooltip>
       )}
     </div>
   );

@@ -8,7 +8,7 @@ type CoffeeCardProps = CoffeeProperties;
 export function CoffeeCard(props: CoffeeCardProps) {
   return (
     <div className="flex h-full w-full flex-col justify-between">
-      <CardHeader category="Hobbies" subcategory="Coffee" />
+      <CardHeader type="Hobbies" label="Coffee" />
 
       <div className="p-5">
         <div className="flex gap-2">

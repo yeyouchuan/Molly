@@ -8,7 +8,12 @@ type ReadingCardProps = ReadingProperties;
 export function ReadingCard(props: ReadingCardProps) {
   return (
     <div className="flex h-full w-full flex-col">
-      <CardHeader category="Reading" subcategory={props.type} url={props.url} />
+      <CardHeader
+        type="Reading"
+        label={props.type}
+        url={props.url}
+        urlTooltipLabel="View on Goodreads"
+      />
 
       <div className="grid grow grid-cols-2 items-end gap-6 px-7 pb-10">
         {/* eslint-disable-next-line @next/next/no-img-element */}

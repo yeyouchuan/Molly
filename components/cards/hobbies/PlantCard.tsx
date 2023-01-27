@@ -16,7 +16,7 @@ export function PlantCard(props: PlantCardProps) {
         className="rounded-lg object-cover transition-all group-hover:mt-12"
       />
 
-      <CardHeader category="Hobbies" subcategory="Plants" />
+      <CardHeader type="Hobbies" label="Plants" />
     </div>
   );
 }

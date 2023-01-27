@@ -17,9 +17,10 @@ export function ProjectCard(props: ProjectCardProps) {
       />
 
       <CardHeader
-        category="Projects"
-        subcategory={props.name}
+        type="Projects"
+        label={props.name}
         url={props.url}
+        urlTooltipLabel="View project"
       />
     </div>
   );

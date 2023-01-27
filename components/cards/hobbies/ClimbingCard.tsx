@@ -16,7 +16,12 @@ export function ClimbingCard(props: ClimbingCardProps) {
         className="rounded-lg object-cover transition-all group-hover:mt-12"
       />
 
-      <CardHeader category="Hobbies" subcategory="Climbing" url={props.url} />
+      <CardHeader
+        type="Hobbies"
+        label="Climbing"
+        url={props.url}
+        urlTooltipLabel="Watch on Instagram"
+      />
     </div>
   );
 }
