@@ -7,9 +7,7 @@ export function Navbar() {
       <NavLink type="projects">Projects</NavLink>
       <NavLink type="writing">Writing</NavLink>
       <NavLink type="reading">Reading</NavLink>
-      <NavLink type="climbing">Climbing</NavLink>
-      <NavLink type="plants">Plants</NavLink>
-      <NavLink type="coffee">Coffee</NavLink>
+      <NavLink type="hobbies">Hobbies</NavLink>
     </div>
   );
 }

@@ -1,53 +1,35 @@
 import classNames from 'classnames';
 
 import { Database } from '@/lib/database.types';
-import { isClimbingProperties } from '@/lib/utils/isClimbingProperties';
-import { isCoffeeProperties } from '@/lib/utils/isCoffeeProperties';
-import { isPlantsProperties } from '@/lib/utils/isPlantsProperties';
+import { isHobbyProperties } from '@/lib/utils/isHobbyProperties';
 import { isProjectsProperties } from '@/lib/utils/isProjectsProperties';
 import { isReadingProperties } from '@/lib/utils/isReadingProperties';
 import { isWritingProperties } from '@/lib/utils/isWritingProperties';
 
-import {
-  ClimbingCard,
-  CoffeeCard,
-  PlantCard,
-  ProjectCard,
-  ReadingCard,
-  WritingCard,
-} from './cards';
+import { ProjectCard, ReadingCard, WritingCard } from './cards';
+import { HobbyCard } from './cards/HobbyCard';
 
 type CardProps = Database['public']['Tables']['cards']['Row'];
 
 export function Card(props: CardProps) {
   function renderSpecificCard() {
-    if (props.type === 'Projects' && isProjectsProperties(props.properties)) {
+    if (props.type === 'projects' && isProjectsProperties(props.properties)) {
       return <ProjectCard {...props.properties} />;
     } else if (
-      props.type === 'Writing' &&
+      props.type === 'writing' &&
       isWritingProperties(props.properties)
     ) {
       return <WritingCard {...props.properties} />;
     } else if (
-      props.type === 'Reading' &&
+      props.type === 'reading' &&
       isReadingProperties(props.properties)
     ) {
       return <ReadingCard {...props.properties} />;
     } else if (
-      props.type === 'Climbing' &&
-      isClimbingProperties(props.properties)
+      props.type === 'hobbies' &&
+      isHobbyProperties(props.properties)
     ) {
-      return <ClimbingCard {...props.properties} />;
-    } else if (
-      props.type === 'Plants' &&
-      isPlantsProperties(props.properties)
-    ) {
-      return <PlantCard {...props.properties} />;
-    } else if (
-      props.type === 'Coffee' &&
-      isCoffeeProperties(props.properties)
-    ) {
-      return <CoffeeCard {...props.properties} />;
+      return <HobbyCard {...props.properties} />;
     } else {
       return null;
     }

@@ -23,25 +23,25 @@ export function IntroCard() {
           <br />
           <br />
           In my free time, I enjoy brewing{' '}
-          <Link href="/coffee" className="text-neutral-900 hover:underline">
+          <Link href="/hobbies" className="text-neutral-900 hover:underline">
             coffee
           </Link>
           , tending to my{' '}
-          <Link href="/plants" className="text-neutral-900 hover:underline">
+          <Link href="/hobbies" className="text-neutral-900 hover:underline">
             plants
           </Link>
           , and&nbsp;
-          <Link href="climbing" className="text-neutral-900 hover:underline">
+          <Link href="/hobbies" className="text-neutral-900 hover:underline">
             climbing
           </Link>{' '}
           (plastic) rocks.
           <br />
           <br />I do some{' '}
-          <Link href="reading" className="text-neutral-900 hover:underline">
+          <Link href="/reading" className="text-neutral-900 hover:underline">
             reading
           </Link>{' '}
           and{' '}
-          <Link href="writing" className="text-neutral-900 hover:underline">
+          <Link href="/writing" className="text-neutral-900 hover:underline">
             writing
           </Link>{' '}
           as well, albeit not as consistently, but I’m working on being better

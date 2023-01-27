@@ -1,17 +1,23 @@
 import { CoffeeProperties } from '@/lib/utils/isCoffeeProperties';
 
-import { CardHeader } from '../CardHeader';
-import { StatusTag } from '../StatusTag';
+import { CardHeader } from '../../CardHeader';
+import { StatusTag } from '../../StatusTag';
 
 type CoffeeCardProps = CoffeeProperties;
 
 export function CoffeeCard(props: CoffeeCardProps) {
   return (
     <div className="flex h-full w-full flex-col justify-between">
-      <CardHeader category="Coffee" subcategory={props.type} />
+      <CardHeader category="Hobbies" subcategory="Coffee" />
 
       <div className="p-5">
-        <StatusTag status="Now brewing" color="orange" />
+        <div className="flex gap-2">
+          <StatusTag
+            status={props.type}
+            color={props.type === 'Espresso' ? 'indigo' : 'lime'}
+          />
+          <StatusTag status="Now brewing" color="orange" />
+        </div>
         <h3 className="font-serif-variation mt-3 mb-5 font-serif text-6xl font-light">
           {props.name}
         </h3>

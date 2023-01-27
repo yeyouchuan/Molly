@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { PlantsProperties } from '@/lib/utils/isPlantsProperties';
 
-import { CardHeader } from '../CardHeader';
+import { CardHeader } from '../../CardHeader';
 
 type PlantCardProps = PlantsProperties;
 
@@ -16,7 +16,7 @@ export function PlantCard(props: PlantCardProps) {
         className="rounded-lg object-cover transition-all group-hover:mt-12"
       />
 
-      <CardHeader category="Plants" subcategory={props.label} />
+      <CardHeader category="Hobbies" subcategory="Plants" />
     </div>
   );
 }

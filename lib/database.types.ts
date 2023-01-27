@@ -9,6 +9,17 @@ export type Json =
 export interface Database {
   public: {
     Tables: {
+      card_types: {
+        Row: {
+          type: string;
+        };
+        Insert: {
+          type: string;
+        };
+        Update: {
+          type?: string;
+        };
+      };
       cards: {
         Row: {
           created_at: string;
