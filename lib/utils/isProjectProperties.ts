@@ -1,17 +1,17 @@
-export type ProjectsProperties = {
+export type ProjectProperties = {
   name: string;
   url: string;
   imageUrl: string;
 };
 
-export function isProjectsProperties(
+export function isProjectProperties(
   properties: unknown
-): properties is ProjectsProperties {
+): properties is ProjectProperties {
   if (typeof properties !== 'object' || !properties) {
     return false;
   }
 
-  const castedProperties: Partial<ProjectsProperties> = properties;
+  const castedProperties: Partial<ProjectProperties> = properties;
 
   return (
     typeof castedProperties.name === 'string' &&

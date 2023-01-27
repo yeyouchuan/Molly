@@ -2,7 +2,7 @@ import classNames from 'classnames';
 
 import { Database } from '@/lib/database.types';
 import { isHobbyProperties } from '@/lib/utils/isHobbyProperties';
-import { isProjectsProperties } from '@/lib/utils/isProjectsProperties';
+import { isProjectProperties } from '@/lib/utils/isProjectProperties';
 import { isReadingProperties } from '@/lib/utils/isReadingProperties';
 import { isWritingProperties } from '@/lib/utils/isWritingProperties';
 
@@ -13,7 +13,7 @@ type CardProps = Database['public']['Tables']['cards']['Row'];
 
 export function Card(props: CardProps) {
   function renderSpecificCard() {
-    if (props.type === 'projects' && isProjectsProperties(props.properties)) {
+    if (props.type === 'projects' && isProjectProperties(props.properties)) {
       return <ProjectCard {...props.properties} />;
     } else if (
       props.type === 'writing' &&

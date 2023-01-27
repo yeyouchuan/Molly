@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
-import { ProjectsProperties } from '@/lib/utils/isProjectsProperties';
+import { ProjectProperties } from '@/lib/utils/isProjectProperties';
 
 import { CardHeader } from '../CardHeader';
 
-type ProjectCardProps = ProjectsProperties;
+type ProjectCardProps = ProjectProperties;
 
 export function ProjectCard(props: ProjectCardProps) {
   return (
