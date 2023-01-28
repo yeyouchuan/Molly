@@ -2,7 +2,7 @@ import { Fraunces, Inter } from '@next/font/google';
 import Head from 'next/head';
 import { PropsWithChildren } from 'react';
 
-import { Navbar } from './Navbar';
+import { Navbar } from '../Navbar';
 
 const inter = Inter({
   weight: ['300', '400'],
@@ -29,9 +29,7 @@ export function Layout({ children }: PropsWithChildren) {
         className={`${inter.variable} ${fraunces.variable} mx-auto w-full max-w-screen-sm px-2 pb-1 font-sans md:max-w-screen-lg xl:max-w-screen-2xl`}
       >
         <Navbar />
-        <div className="grid grid-flow-row-dense grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
-          {children}
-        </div>
+        {children}
       </main>
     </>
   );

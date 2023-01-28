@@ -15,8 +15,10 @@ export function NavLink(props: NavLinkProps) {
     <Link
       href={path}
       className={classNames(
-        'rounded py-1 px-2 transition-colors hover:text-neutral-900',
-        router.asPath === path ? 'text-neutral-900' : 'text-neutral-500'
+        'rounded py-1 px-2 transition-colors',
+        // State: hover
+        'hover:text-neutral-900',
+        router.asPath === path ? 'text-neutral-900' : 'text-neutral-400'
       )}
       {...anchorProps}
     >

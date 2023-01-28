@@ -5,6 +5,7 @@ import {
 } from 'next';
 
 import { Card } from '@/components/Card';
+import { CardGridLayout } from '@/components/layouts/CardGridLayout';
 import { supabase } from '@/lib/supabaseClient';
 
 export default function TypePage(
@@ -12,9 +13,20 @@ export default function TypePage(
 ) {
   return (
     <>
-      {props.cards?.map((card) => (
-        <Card key={card.id} {...card} />
-      ))}
+      <div className="flex flex-col gap-8 px-2 pt-4 pb-8">
+        <h1 className="font-serif-variation font-serif text-8xl font-extralight text-neutral-900">
+          {props.cardType?.type}.
+        </h1>
+        <p className="max-w-lg tracking-tight text-neutral-500">
+          {props.cardType?.description}
+        </p>
+      </div>
+
+      <CardGridLayout>
+        {props.cards?.map((card) => (
+          <Card key={card.id} {...card} />
+        ))}
+      </CardGridLayout>
     </>
   );
 }
@@ -42,9 +54,16 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     .ilike('type', `%${type}%`)
     .order('updated_at', { ascending: false });
 
+  const { data: cardType } = await supabase
+    .from('card_types')
+    .select('*')
+    .ilike('type', `%${type}%`)
+    .single();
+
   return {
     props: {
       cards,
+      cardType,
     },
   };
 }

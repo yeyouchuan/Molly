@@ -11,12 +11,15 @@ export interface Database {
     Tables: {
       card_types: {
         Row: {
+          description: string;
           type: string;
         };
         Insert: {
+          description?: string;
           type: string;
         };
         Update: {
+          description?: string;
           type?: string;
         };
       };
