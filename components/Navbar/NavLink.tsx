@@ -1,28 +1,25 @@
 import classNames from 'classnames';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 type NavLinkProps = {
-  path: string;
+  href: string;
   children: string;
-} & React.AnchorHTMLAttributes<HTMLAnchorElement>;
+};
 
 export function NavLink(props: NavLinkProps) {
-  const { path, children, ...anchorProps } = props;
-  const router = useRouter();
-
   return (
-    <Link
-      href={path}
+    <a
+      href={props.href}
+      target="_blank"
+      rel="noreferrer"
       className={classNames(
-        'rounded py-1 px-2 transition-colors',
+        ' py-1 px-2 text-sm text-neutral-400',
+        // Text decoration
+        'decoration-wavy underline-offset-4',
         // State: hover
-        'hover:text-neutral-900',
-        router.asPath === path ? 'text-neutral-900' : 'text-neutral-400'
+        'cursor-alias transition-colors hover:text-neutral-900 hover:underline'
       )}
-      {...anchorProps}
     >
-      {children}
-    </Link>
+      {props.children}
+    </a>
   );
 }

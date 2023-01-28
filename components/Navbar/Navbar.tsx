@@ -1,95 +1,27 @@
-import { useRef, useState } from 'react';
+import classNames from 'classnames';
+
+import useScrollPosition from '@/lib/hooks/useScrollPosition';
 
 import { NavLink } from './NavLink';
-
-type Tab = {
-  label: string;
-  path: string;
-};
-
-const tabs: Tab[] = [
-  {
-    label: 'Chester How',
-    path: '/',
-  },
-  {
-    label: 'Projects',
-    path: '/projects',
-  },
-  {
-    label: 'Writing',
-    path: '/writing',
-  },
-  {
-    label: 'Reading',
-    path: '/reading',
-  },
-  {
-    label: 'Hobbies',
-    path: '/hobbies',
-  },
-];
+import { NavTabGroup } from './NavTabGroup';
 
 export function Navbar() {
-  const [tabBoundingBox, setTabBoundingBox] = useState<DOMRect | null>(null);
-  const [wrapperBoundingBox, setWrapperBoundingBox] = useState<DOMRect | null>(
-    null
-  );
-  const [highlightedTab, setHighlightedTab] = useState<Tab | null>(null);
-  const [isHoveredFromNull, setIsHoveredFromNull] = useState(true);
-
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const highlightRef = useRef<HTMLDivElement>(null);
-
-  function repositionHighlight(
-    ev: React.MouseEvent<HTMLAnchorElement>,
-    tab: Tab
-  ) {
-    const target = ev.target as Element;
-    setTabBoundingBox(target.getBoundingClientRect());
-    setWrapperBoundingBox(wrapperRef.current?.getBoundingClientRect() ?? null);
-    setIsHoveredFromNull(highlightedTab === null);
-    setHighlightedTab(tab);
-  }
-
-  function resetHighlight() {
-    setHighlightedTab(null);
-  }
-
-  let highlightStyles: Record<string, string | number> = {};
-
-  if (tabBoundingBox !== null && wrapperBoundingBox !== null) {
-    highlightStyles.transitionDuration = isHoveredFromNull ? '0ms' : '150ms';
-    highlightStyles.opacity = highlightedTab ? 0.6 : 0;
-    highlightStyles.width = `${tabBoundingBox.width}px`;
-    highlightStyles.transform = `translate(${
-      tabBoundingBox.left - wrapperBoundingBox.left
-    }px)`;
-  }
+  const scrollPosition = useScrollPosition();
 
   return (
-    <div className="sticky top-0 isolate z-10 flex justify-between py-4 px-1">
-      <nav
-        ref={wrapperRef}
-        onMouseLeave={resetHighlight}
-        className="relative flex rounded-lg border border-neutral-200 bg-white/50 p-1 text-sm shadow-md backdrop-blur-md"
+    <nav className="sticky top-0 isolate z-10 flex items-center justify-between py-4 px-1">
+      <NavTabGroup />
+
+      <div
+        className={classNames(
+          'flex transition-opacity',
+          scrollPosition > 20 && 'opacity-0'
+        )}
       >
-        {/* Highligher */}
-        <div
-          ref={highlightRef}
-          style={highlightStyles}
-          className="absolute left-0 -z-10 h-7 rounded bg-neutral-200 backdrop-blur-md transition-[width,transform,opacity]"
-        />
-        {tabs.map((tab) => (
-          <NavLink
-            key={tab.label}
-            path={tab.path}
-            onMouseOver={(ev) => repositionHighlight(ev, tab)}
-          >
-            {tab.label}
-          </NavLink>
-        ))}
-      </nav>
-    </div>
+        <NavLink href="https://github.com/chesterhow">GitHub</NavLink>
+        <NavLink href="https://twitter.com/itsnotchester">Twitter</NavLink>
+        <NavLink href="https://read.cv/chesterhow">CV</NavLink>
+      </div>
+    </nav>
   );
 }
