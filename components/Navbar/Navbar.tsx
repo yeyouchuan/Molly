@@ -9,12 +9,13 @@ export function Navbar() {
   const scrollPosition = useScrollPosition();
 
   return (
-    <nav className="sticky top-0 isolate z-10 flex items-center justify-between py-4 px-1">
+    <nav className="sticky top-0 isolate z-10 flex items-center justify-center py-4 px-1 md:justify-between">
       <NavTabGroup />
 
       <div
         className={classNames(
-          'flex transition-opacity',
+          'hidden md:flex',
+          'transition-opacity',
           scrollPosition > 20 && 'opacity-0'
         )}
       >

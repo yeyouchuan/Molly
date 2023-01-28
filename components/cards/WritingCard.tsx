@@ -21,7 +21,7 @@ export function WritingCard(props: WritingCardProps) {
         <span className="mt-2 mb-4 block text-sm -tracking-[0.03em] text-neutral-400">
           {props.publishedOn}
         </span>
-        <p className="leading-relaxed text-neutral-700 line-clamp-4">
+        <p className="leading-relaxed text-neutral-700 line-clamp-3 md:line-clamp-4">
           {props.contentPreview}
         </p>
       </div>

@@ -38,8 +38,9 @@ export function Card(props: CardProps) {
   return (
     <div
       className={classNames(
-        props.large ? 'col-span-2 aspect-[2]' : 'aspect-square',
-        'px-1 pb-2'
+        props.large ? 'aspect-[2] sm:col-span-2' : 'aspect-square',
+        'px-1 pb-2',
+        'min-h-[60px]'
       )}
     >
       <div className="group h-full w-full overflow-hidden rounded-lg bg-neutral-50 transition-colors hover:bg-neutral-100">

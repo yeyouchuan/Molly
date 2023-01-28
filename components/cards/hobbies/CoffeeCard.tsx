@@ -18,13 +18,13 @@ export function CoffeeCard(props: CoffeeCardProps) {
           />
           <StatusTag status="Now brewing" color="orange" />
         </div>
-        <h3 className="font-serif-variation mt-3 mb-5 font-serif text-6xl font-light">
+        <h3 className="font-serif-variation mt-3 mb-5 font-serif text-4xl font-light md:text-5xl lg:text-6xl">
           {props.name}
         </h3>
         <p className="text-neutral-400">
           <span>{props.origin}</span> · <span>{props.roaster}</span>
         </p>
-        <p className="text-neutral-700">{props.notes}</p>
+        <p className="text-neutral-700 line-clamp-1">{props.notes}</p>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ export function Layout({ children }: PropsWithChildren) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main
-        className={`${inter.variable} ${fraunces.variable} mx-auto w-full max-w-screen-sm px-2 font-sans md:max-w-screen-lg xl:max-w-screen-2xl`}
+        className={`${inter.variable} ${fraunces.variable} mx-auto w-full max-w-screen-sm px-8 font-sans md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-2xl`}
       >
         <Navbar />
 

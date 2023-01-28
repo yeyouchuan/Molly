@@ -11,6 +11,7 @@ export default function Home(
   return (
     <CardGridLayout>
       <IntroCard />
+
       {props.featured?.map(({ card }) =>
         card && !Array.isArray(card) ? <Card key={card.id} {...card} /> : null
       )}

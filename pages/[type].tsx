@@ -13,11 +13,11 @@ export default function TypePage(
 ) {
   return (
     <>
-      <div className="flex flex-col gap-8 px-2 pt-4 pb-8">
-        <h1 className="font-serif-variation font-serif text-8xl font-extralight text-neutral-900">
+      <div className="flex flex-col gap-4 px-2 pt-4 pb-8 md:gap-8">
+        <h1 className="font-serif-variation font-serif text-6xl font-extralight text-neutral-900 md:text-8xl">
           {props.cardType?.type}.
         </h1>
-        <p className="max-w-lg tracking-tight text-neutral-500">
+        <p className="max-w-prose tracking-tight text-neutral-400">
           {props.cardType?.description}
         </p>
       </div>

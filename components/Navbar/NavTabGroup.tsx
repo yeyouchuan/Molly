@@ -9,7 +9,7 @@ type Tab = {
 
 const tabs: Tab[] = [
   {
-    label: 'Chester How',
+    label: 'Chester',
     path: '/',
   },
   {
