@@ -16,14 +16,7 @@ export function ProjectCard(props: ProjectCardProps) {
         className="-z-10 object-contain transition-transform group-hover:scale-105"
       />
 
-      <CardHeader
-        type="Projects"
-        label={props.name}
-        link={{
-          url: props.url,
-          tooltipLabel: 'View project',
-        }}
-      />
+      <CardHeader type="Projects" label={props.name} link={props.link} />
     </div>
   );
 }

@@ -1,7 +1,9 @@
+import { isLink, Link } from './typeGuards/isLink';
+
 export type ProjectProperties = {
   name: string;
-  url: string;
   imageUrl: string;
+  link?: Link;
 };
 
 export function isProjectProperties(
@@ -15,7 +17,7 @@ export function isProjectProperties(
 
   return (
     typeof castedProperties.name === 'string' &&
-    typeof castedProperties.url === 'string' &&
-    typeof castedProperties.imageUrl === 'string'
+    typeof castedProperties.imageUrl === 'string' &&
+    (!castedProperties.hasOwnProperty('link') || isLink(castedProperties.link))
   );
 }
