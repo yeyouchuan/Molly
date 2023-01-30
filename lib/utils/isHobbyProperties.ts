@@ -1,5 +1,9 @@
+const cardStyles = ['image', 'text', 'image_and_text'] as const;
+type CardStyle = (typeof cardStyles)[number];
+
 export type HobbyProperties = {
-  type: string;
+  label: string;
+  cardStyle: CardStyle;
   properties: Record<string, any>;
 };
 
@@ -13,8 +17,10 @@ export function isHobbyProperties(
   const castedProperties: Partial<HobbyProperties> = properties;
 
   return (
-    typeof castedProperties.type === 'string' &&
+    typeof castedProperties.label === 'string' &&
+    typeof castedProperties.cardStyle === 'string' &&
+    cardStyles.includes(castedProperties.cardStyle) &&
     typeof castedProperties.properties === 'object' &&
-    castedProperties !== null
+    castedProperties.properties !== null
   );
 }

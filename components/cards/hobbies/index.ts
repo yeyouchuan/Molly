@@ -1,3 +1,3 @@
-export * from './ClimbingCard';
-export * from './CoffeeCard';
-export * from './PlantCard';
+export * from './ImageAndTextCard';
+export * from './ImageCard';
+export * from './TextCard';

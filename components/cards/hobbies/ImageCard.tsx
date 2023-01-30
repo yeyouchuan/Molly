@@ -1,12 +1,14 @@
 import Image from 'next/image';
 
-import { PlantsProperties } from '@/lib/utils/isPlantsProperties';
+import { ImageCardProperties } from '@/lib/utils/hobbyCardTypeGuards/isImageCardProperties';
 
 import { CardHeader } from '../../CardHeader';
 
-type PlantCardProps = PlantsProperties;
+type ImageCardProps = ImageCardProperties & {
+  label: string;
+};
 
-export function PlantCard(props: PlantCardProps) {
+export function ImageCard(props: ImageCardProps) {
   return (
     <div className="relative h-full w-full">
       <Image
@@ -16,7 +18,7 @@ export function PlantCard(props: PlantCardProps) {
         className="rounded-lg object-cover transition-all group-hover:mt-12"
       />
 
-      <CardHeader type="Hobbies" label="Plants" />
+      <CardHeader type="Hobbies" label={props.label} link={props.link} />
     </div>
   );
 }

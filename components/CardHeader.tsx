@@ -1,22 +1,16 @@
 import classNames from 'classnames';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { useRouter } from 'next/router';
+
+import { Link } from '@/lib/utils/typeGuards/isLink';
 
 import { Tooltip } from './Tooltip';
 
 type CardHeaderProps = {
   type: string;
   label: string;
-} & (
-  | {
-      url: string;
-      urlTooltipLabel: string;
-    }
-  | {
-      url?: never;
-      urlTooltipLabel?: never;
-    }
-);
+  link?: Link;
+};
 
 export function CardHeader(props: CardHeaderProps) {
   const router = useRouter();
@@ -29,21 +23,21 @@ export function CardHeader(props: CardHeaderProps) {
           props.type
         ) : (
           <Tooltip content={`Browse ${props.type.toLowerCase()}`} side="bottom">
-            <Link
+            <NextLink
               href={`/${props.type.toLowerCase()}`}
               className="transition-colors hover:text-neutral-500 hover:underline"
             >
               {props.type}
-            </Link>
+            </NextLink>
           </Tooltip>
         )}
         &nbsp;·&nbsp;{props.label}
       </span>
 
-      {typeof props.url === 'string' && (
-        <Tooltip content={props.urlTooltipLabel} side="left">
+      {props.link !== undefined && (
+        <Tooltip content={props.link.tooltipLabel} side="left">
           <a
-            href={props.url}
+            href={props.link.url}
             target="_blank"
             rel="noreferrer"
             className={classNames(

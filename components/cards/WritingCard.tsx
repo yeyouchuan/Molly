@@ -10,8 +10,10 @@ export function WritingCard(props: WritingCardProps) {
       <CardHeader
         type="Writing"
         label={props.type}
-        url={props.url}
-        urlTooltipLabel="Read full blog post"
+        link={{
+          url: props.url,
+          tooltipLabel: 'Read full blog post',
+        }}
       />
 
       <div className="p-5">

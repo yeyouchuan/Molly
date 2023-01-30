@@ -1,8 +1,10 @@
 import classNames from 'classnames';
 
+import { TailwindColor } from '@/lib/tailwind.types';
+
 type StatusTagProps = {
   status: string;
-  color: 'orange' | 'amber' | 'lime' | 'indigo';
+  color: TailwindColor;
 };
 
 export function StatusTag(props: StatusTagProps) {

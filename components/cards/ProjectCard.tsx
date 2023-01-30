@@ -19,8 +19,10 @@ export function ProjectCard(props: ProjectCardProps) {
       <CardHeader
         type="Projects"
         label={props.name}
-        url={props.url}
-        urlTooltipLabel="View project"
+        link={{
+          url: props.url,
+          tooltipLabel: 'View project',
+        }}
       />
     </div>
   );
