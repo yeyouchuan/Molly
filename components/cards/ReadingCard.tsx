@@ -11,8 +11,10 @@ export function ReadingCard(props: ReadingCardProps) {
       <CardHeader
         type="Reading"
         label={props.type}
-        url={props.url}
-        urlTooltipLabel="View on Goodreads"
+        link={{
+          url: props.url,
+          tooltipLabel: 'View on Goodreads',
+        }}
       />
 
       <div className="grid grow grid-cols-2 items-end gap-6 px-7 pb-10">
