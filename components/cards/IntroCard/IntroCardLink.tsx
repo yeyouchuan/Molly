@@ -8,7 +8,7 @@ type IntroCardLinkProps = {
   decorationColor:
     | 'orange'
     | 'lime'
-    | 'green'
+    | 'teal'
     | 'sky'
     | 'purple'
     | 'fuchsia'
@@ -22,8 +22,8 @@ export function IntroCardLink(props: IntroCardLinkProps) {
         return 'decoration-orange-400';
       case 'lime':
         return 'decoration-lime-400';
-      case 'green':
-        return 'decoration-green-400';
+      case 'teal':
+        return 'decoration-teal-400';
       case 'sky':
         return 'decoration-sky-400';
       case 'purple':

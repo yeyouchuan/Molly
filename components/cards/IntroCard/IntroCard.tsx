@@ -36,11 +36,11 @@ export function IntroCard() {
           (plastic) rocks.
           <br />
           <br />I do some{' '}
-          <IntroCardLink href="/reading" decorationColor="green">
+          <IntroCardLink href="/reading" decorationColor="fuchsia">
             reading
           </IntroCardLink>{' '}
           and{' '}
-          <IntroCardLink href="/writing" decorationColor="fuchsia">
+          <IntroCardLink href="/writing" decorationColor="teal">
             writing
           </IntroCardLink>{' '}
           as well, albeit not as consistently, but I’m working on being better

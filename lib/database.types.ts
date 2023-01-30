@@ -29,6 +29,7 @@ export interface Database {
           id: string;
           large: boolean;
           properties: Json;
+          published_at: string;
           type: string;
           updated_at: string;
         };
@@ -37,6 +38,7 @@ export interface Database {
           id?: string;
           large?: boolean;
           properties: Json;
+          published_at: string;
           type: string;
           updated_at?: string;
         };
@@ -45,6 +47,7 @@ export interface Database {
           id?: string;
           large?: boolean;
           properties?: Json;
+          published_at?: string;
           type?: string;
           updated_at?: string;
         };

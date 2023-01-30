@@ -52,7 +52,7 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     .from('cards')
     .select('*')
     .ilike('type', `%${type}%`)
-    .order('updated_at', { ascending: false });
+    .order('published_at', { ascending: false });
 
   const { data: cardType } = await supabase
     .from('card_types')
