@@ -8,12 +8,14 @@ const inter = Inter({
   weight: ['300', '400'],
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
 });
 
 const fraunces = Fraunces({
   subsets: ['latin'],
   axes: ['opsz', 'SOFT'],
   variable: '--font-fraunces',
+  display: 'swap',
 });
 
 export function Layout({ children }: PropsWithChildren) {
