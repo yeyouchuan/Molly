@@ -1,8 +1,15 @@
+import { motion } from 'framer-motion';
+
+import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/framerMotionVariants';
+
 import { IntroCardLink } from './IntroCardLink';
 
 export function IntroCard() {
   return (
-    <div className="row-span-2 px-1 pb-2 sm:col-span-2 lg:aspect-square">
+    <motion.div
+      className="row-span-2 px-1 pb-2 sm:col-span-2 lg:aspect-square"
+      variants={FADE_DOWN_ANIMATION_VARIANTS}
+    >
       <div className="h-full w-full p-4 sm:p-8">
         <h1 className="font-serif-variation font-serif text-2xl font-light !leading-tight text-neutral-400 sm:text-3xl lg:text-4xl">
           Hello I’m <span className="text-neutral-900">Chester</span> 👋&nbsp;
@@ -47,6 +54,6 @@ export function IntroCard() {
           at that.
         </h1>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 
 import { NavTab } from './NavTab';
@@ -68,12 +69,15 @@ export function NavTabGroup() {
   }
 
   return (
-    <div
+    <motion.div
       ref={wrapperRef}
       onMouseLeave={resetHighlight}
       className="relative flex rounded-lg border border-neutral-200 bg-white/50 p-1 shadow-md backdrop-blur-md"
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
     >
-      {/* Highligher */}
+      {/* Highlighter */}
       <div
         ref={highlightRef}
         style={highlightStyles}
@@ -88,6 +92,6 @@ export function NavTabGroup() {
           {tab.label}
         </NavTab>
       ))}
-    </div>
+    </motion.div>
   );
 }

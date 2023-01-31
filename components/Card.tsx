@@ -1,6 +1,8 @@
 import classNames from 'classnames';
+import { motion } from 'framer-motion';
 
 import { Database } from '@/lib/database.types';
+import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/framerMotionVariants';
 import { isHobbyProperties } from '@/lib/utils/isHobbyProperties';
 import { isProjectProperties } from '@/lib/utils/isProjectProperties';
 import { isReadingProperties } from '@/lib/utils/isReadingProperties';
@@ -43,9 +45,12 @@ export function Card(props: CardProps) {
         'min-h-[60px]'
       )}
     >
-      <div className="group h-full w-full overflow-hidden rounded-lg bg-neutral-50 transition-colors hover:bg-neutral-100">
+      <motion.div
+        className="group h-full w-full overflow-hidden rounded-lg bg-neutral-50 transition-colors hover:bg-neutral-100"
+        variants={FADE_DOWN_ANIMATION_VARIANTS}
+      >
         {renderSpecificCard()}
-      </div>
+      </motion.div>
     </div>
   );
 }
