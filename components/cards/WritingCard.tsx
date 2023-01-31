@@ -2,7 +2,9 @@ import { WritingProperties } from '@/lib/utils/isWritingProperties';
 
 import { CardHeader } from '../CardHeader';
 
-type WritingCardProps = WritingProperties;
+type WritingCardProps = WritingProperties & {
+  large?: boolean;
+};
 
 export function WritingCard(props: WritingCardProps) {
   return (

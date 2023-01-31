@@ -7,21 +7,37 @@ import { HobbyProperties } from '@/lib/utils/isHobbyProperties';
 
 import { ImageAndTextCard, ImageCard, TextCard } from './hobbies';
 
-type HobbyCardProps = HobbyProperties;
+type HobbyCardProps = HobbyProperties & {
+  large?: boolean;
+};
 
 export function HobbyCard(props: HobbyCardProps) {
   if (props.cardStyle === 'image' && isImageCardProperties(props.properties)) {
-    return <ImageCard label={props.label} {...props.properties} />;
+    return (
+      <ImageCard
+        label={props.label}
+        large={props.large}
+        {...props.properties}
+      />
+    );
   } else if (
     props.cardStyle === 'text' &&
     isTextCardProperties(props.properties)
   ) {
-    return <TextCard label={props.label} {...props.properties} />;
+    return (
+      <TextCard label={props.label} large={props.large} {...props.properties} />
+    );
   } else if (
     props.cardStyle === 'image_and_text' &&
     isImageAndTextCardProperties(props.properties)
   ) {
-    return <ImageAndTextCard label={props.label} {...props.properties} />;
+    return (
+      <ImageAndTextCard
+        label={props.label}
+        large={props.large}
+        {...props.properties}
+      />
+    );
   } else {
     return null;
   }

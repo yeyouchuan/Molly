@@ -5,6 +5,7 @@ import { StatusTag } from '../../StatusTag';
 
 type TextCardProps = TextCardProperties & {
   label: string;
+  large?: boolean;
 };
 
 export function TextCard(props: TextCardProps) {

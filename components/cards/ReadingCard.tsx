@@ -3,7 +3,9 @@ import { ReadingProperties } from '@/lib/utils/isReadingProperties';
 import { CardHeader } from '../CardHeader';
 import { StatusTag } from '../StatusTag';
 
-type ReadingCardProps = ReadingProperties;
+type ReadingCardProps = ReadingProperties & {
+  large?: boolean;
+};
 
 export function ReadingCard(props: ReadingCardProps) {
   return (

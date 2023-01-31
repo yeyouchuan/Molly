@@ -2,6 +2,7 @@ import { isLink, Link } from '../typeGuards/isLink';
 
 export type ImageCardProperties = {
   imageUrl: string;
+  description?: string;
   link?: Link;
 };
 
@@ -16,6 +17,8 @@ export function isImageCardProperties(
 
   return (
     typeof castedProperties.imageUrl === 'string' &&
+    (!castedProperties.hasOwnProperty('description') ||
+      typeof castedProperties.description === 'string') &&
     (!castedProperties.hasOwnProperty('link') || isLink(castedProperties.link))
   );
 }

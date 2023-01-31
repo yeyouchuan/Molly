@@ -1,10 +1,12 @@
 import Image from 'next/image';
 
 import { CardHeader } from '@/components/CardHeader';
+import { cardImageSizes } from '@/lib/utils/cardImageSizes';
 import { ImageAndTextCardProperties } from '@/lib/utils/hobbyCardTypeGuards';
 
 type ImageAndTextCardProps = ImageAndTextCardProperties & {
   label: string;
+  large?: boolean;
 };
 
 export function ImageAndTextCard(props: ImageAndTextCardProps) {
@@ -14,7 +16,8 @@ export function ImageAndTextCard(props: ImageAndTextCardProps) {
         src={props.imageUrl}
         alt={props.label}
         fill
-        className="-z-10 rounded-lg object-cover transition-transform group-hover:scale-105"
+        sizes={cardImageSizes(props.large)}
+        className="-z-10 object-cover transition-transform group-hover:scale-105"
       />
 
       <CardHeader type="Hobbies" label={props.label} link={props.link} />

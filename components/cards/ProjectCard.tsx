@@ -1,10 +1,13 @@
 import Image from 'next/image';
 
+import { cardImageSizes } from '@/lib/utils/cardImageSizes';
 import { ProjectProperties } from '@/lib/utils/isProjectProperties';
 
 import { CardHeader } from '../CardHeader';
 
-type ProjectCardProps = ProjectProperties;
+type ProjectCardProps = ProjectProperties & {
+  large?: boolean;
+};
 
 export function ProjectCard(props: ProjectCardProps) {
   return (
@@ -13,6 +16,7 @@ export function ProjectCard(props: ProjectCardProps) {
         src={props.imageUrl}
         alt={props.name}
         fill
+        sizes={cardImageSizes(props.large)}
         className="-z-10 object-contain transition-transform group-hover:scale-105"
       />
 

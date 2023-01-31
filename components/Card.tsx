@@ -16,22 +16,22 @@ type CardProps = Database['public']['Tables']['cards']['Row'];
 export function Card(props: CardProps) {
   function renderSpecificCard() {
     if (props.type === 'projects' && isProjectProperties(props.properties)) {
-      return <ProjectCard {...props.properties} />;
+      return <ProjectCard large={props.large} {...props.properties} />;
     } else if (
       props.type === 'writing' &&
       isWritingProperties(props.properties)
     ) {
-      return <WritingCard {...props.properties} />;
+      return <WritingCard large={props.large} {...props.properties} />;
     } else if (
       props.type === 'reading' &&
       isReadingProperties(props.properties)
     ) {
-      return <ReadingCard {...props.properties} />;
+      return <ReadingCard large={props.large} {...props.properties} />;
     } else if (
       props.type === 'hobbies' &&
       isHobbyProperties(props.properties)
     ) {
-      return <HobbyCard {...props.properties} />;
+      return <HobbyCard large={props.large} {...props.properties} />;
     } else {
       return null;
     }
