@@ -25,7 +25,14 @@ export function CardHeader(props: CardHeaderProps) {
           <Tooltip content={`Browse ${props.type.toLowerCase()}`} side="bottom">
             <NextLink
               href={`/${props.type.toLowerCase()}`}
-              className="transition-colors hover:text-neutral-500 hover:underline"
+              className={classNames(
+                'transition-colors',
+                // State: focus
+                'focus-visible:ring-4 focus-visible:ring-blue-200',
+                'focus-visible:text-neutral-500 focus-visible:underline',
+                // State: hover
+                'hover:text-neutral-500 hover:underline'
+              )}
             >
               {props.type}
             </NextLink>
@@ -42,6 +49,9 @@ export function CardHeader(props: CardHeaderProps) {
             rel="noreferrer"
             className={classNames(
               'flex h-8 w-8 items-center justify-center rounded-full',
+              // State: focus
+              'focus-visible:ring-4 focus-visible:ring-blue-200',
+              'group-focus-within:bg-white group-focus-within:text-neutral-900',
               // State: hover
               'cursor-alias transition-colors group-hover:bg-white group-hover:text-neutral-900'
             )}

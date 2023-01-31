@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+
 import { ReadingProperties } from '@/lib/utils/isReadingProperties';
 
 import { CardHeader } from '../CardHeader';
@@ -24,7 +26,13 @@ export function ReadingCard(props: ReadingCardProps) {
         <img
           src={props.imageUrl}
           alt={props.title}
-          className="rounded shadow-lg transition-transform group-hover:-rotate-3 group-hover:scale-110 group-hover:shadow-xl"
+          className={classNames(
+            'rounded shadow-lg transition-transform',
+            // State: focus
+            'group-focus-within:-rotate-3 group-focus-within:scale-110 group-focus-within:shadow-xl',
+            // State: hover
+            'group-hover:-rotate-3 group-hover:scale-110 group-hover:shadow-xl'
+          )}
         />
 
         <div className="-tracking-[0.03em]">

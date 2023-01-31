@@ -57,8 +57,13 @@ export function IntroCardLink(props: IntroCardLinkProps) {
     <Link
       href={props.href}
       className={classNames(
-        'text-neutral-900 underline-offset-4 hover:underline',
-        getTailwindColor()
+        'rounded text-neutral-900 underline-offset-4',
+        getTailwindColor(),
+        // State: focus
+        'focus-visible:ring-4 focus-visible:ring-blue-200',
+        'focus:underline',
+        // State: hover
+        'hover:underline'
       )}
     >
       {props.children}

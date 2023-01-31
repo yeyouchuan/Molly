@@ -17,7 +17,7 @@ export function Navbar() {
         className={classNames(
           'hidden md:flex',
           'transition-opacity',
-          scrollPosition > 20 && 'opacity-0'
+          scrollPosition > 20 && 'pointer-events-none !opacity-0'
         )}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -46,7 +46,13 @@ export function Card(props: CardProps) {
       )}
     >
       <motion.div
-        className="group h-full w-full overflow-hidden rounded-lg bg-neutral-50 transition-colors hover:bg-neutral-100"
+        className={classNames(
+          'group h-full w-full overflow-hidden rounded-lg bg-neutral-50 transition-colors',
+          // State: focus
+          'focus-within:bg-neutral-100',
+          // State: hover
+          'hover:bg-neutral-100'
+        )}
         variants={FADE_DOWN_ANIMATION_VARIANTS}
       >
         {renderSpecificCard()}

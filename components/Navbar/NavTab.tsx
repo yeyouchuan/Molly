@@ -15,9 +15,12 @@ export function NavTab(props: NavTabProps) {
     <Link
       href={path}
       className={classNames(
-        'py-1 px-2 text-sm transition-colors',
+        'rounded py-1 px-2 text-sm transition-colors',
+        // State: focus
+        'focus-visible:ring-4 focus-visible:ring-blue-200',
+        'focus:text-neutral-900',
         // State: hover
-        'hover:text-neutral-900',
+        'hover:text-neutral-900 ',
         router.asPath === path ? 'text-neutral-900' : 'text-neutral-400'
       )}
       {...anchorProps}
