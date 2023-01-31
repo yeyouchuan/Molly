@@ -1,16 +1,16 @@
+import { isLink, Link } from './typeGuards/isLink';
+import { isTag, Tag } from './typeGuards/isTag';
+
 const readingTypes = ['Books'] as const;
 type ReadingType = (typeof readingTypes)[number];
-
-const readingStatuses = ['To read', 'Reading', 'Read'] as const;
-type ReadingStatus = (typeof readingStatuses)[number];
 
 export type ReadingProperties = {
   type: ReadingType;
   title: string;
   author: string;
-  status: ReadingStatus;
+  tags: Tag[];
   imageUrl: string;
-  url: string;
+  link: Link;
 };
 
 export function isReadingProperties(
@@ -27,9 +27,9 @@ export function isReadingProperties(
     readingTypes.includes(castedProperties.type) &&
     typeof castedProperties.title === 'string' &&
     typeof castedProperties.author === 'string' &&
-    typeof castedProperties.status === 'string' &&
-    readingStatuses.includes(castedProperties.status) &&
+    Array.isArray(castedProperties.tags) &&
+    castedProperties.tags.every((tag) => isTag(tag)) &&
     typeof castedProperties.imageUrl === 'string' &&
-    typeof castedProperties.url === 'string'
+    isLink(castedProperties.link)
   );
 }

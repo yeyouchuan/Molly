@@ -12,14 +12,7 @@ type ReadingCardProps = ReadingProperties & {
 export function ReadingCard(props: ReadingCardProps) {
   return (
     <div className="isolate flex h-full w-full flex-col">
-      <CardHeader
-        type="Reading"
-        label={props.type}
-        link={{
-          url: props.url,
-          tooltipLabel: 'View on Goodreads',
-        }}
-      />
+      <CardHeader type="Reading" label={props.type} link={props.link} />
 
       <div className="grid grow grid-cols-2 items-end gap-6 px-7 pb-10">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -36,7 +29,9 @@ export function ReadingCard(props: ReadingCardProps) {
         />
 
         <div className="-tracking-[0.03em]">
-          <StatusTag status={props.status} color="amber" />
+          {props.tags.map((tag, index) => (
+            <StatusTag key={index} status={tag.label} color={tag.color} />
+          ))}
           <h3 className="mt-3 line-clamp-3">{props.title}</h3>
           <span className="text-neutral-400">{props.author}</span>
         </div>

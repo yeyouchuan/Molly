@@ -19,8 +19,12 @@ export function StatusTag(props: StatusTagProps) {
               return 'bg-amber-400/40';
             case 'lime':
               return 'bg-lime-400/40';
+            case 'green':
+              return 'bg-green-400/40';
             case 'indigo':
               return 'bg-indigo-400/40';
+            case 'rose':
+              return 'bg-rose-400/40';
           }
         })(),
         'inline-block rounded px-2 text-sm text-neutral-900/75'
