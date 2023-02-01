@@ -5,14 +5,18 @@ import {
 } from 'next';
 
 import { Card } from '@/components/Card';
+import { Head } from '@/components/Head';
 import { CardGridLayout } from '@/components/layouts/CardGridLayout';
 import { supabase } from '@/lib/supabaseClient';
+import { capitalize } from '@/lib/utils/capitalize';
 
 export default function TypePage(
   props: InferGetStaticPropsType<typeof getStaticProps>
 ) {
   return (
     <>
+      <Head title={capitalize(props.cardType?.type ?? '')} />
+
       <div className="flex flex-col gap-4 px-2 pt-4 pb-8 md:gap-8">
         <h1 className="font-serif-variation font-serif text-6xl font-extralight text-neutral-900 md:text-8xl">
           {props.cardType?.type}.

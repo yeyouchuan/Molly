@@ -1,7 +1,7 @@
 import { Fraunces, Inter } from '@next/font/google';
-import Head from 'next/head';
 import { PropsWithChildren } from 'react';
 
+import { Head } from '../Head';
 import { Navbar } from '../Navbar';
 
 const inter = Inter({
@@ -21,12 +21,7 @@ const fraunces = Fraunces({
 export function Layout({ children }: PropsWithChildren) {
   return (
     <>
-      <Head>
-        <title>Chester How - Product Engineer</title>
-        <meta name="description" content="Welcome to my digital garden 🌱" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head />
       <main
         className={`${inter.variable} ${fraunces.variable} mx-auto w-full max-w-screen-sm px-8 font-sans md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-2xl`}
       >
