@@ -1,5 +1,8 @@
 import { Fraunces, Inter } from '@next/font/google';
+import Image from 'next/image';
 import { PropsWithChildren } from 'react';
+
+import leaves from '@/public/leaves.png';
 
 import { Head } from '../Head';
 import { Navbar } from '../Navbar';
@@ -29,10 +32,11 @@ export function Layout({ children }: PropsWithChildren) {
 
         {children}
 
-        <footer className="pt-20 pb-10 text-center">
-          <span className="text-sm text-neutral-400">
-            Planted 🌱 by Chester
-          </span>
+        <footer className="pt-36 pb-20 text-center">
+          <div className="mb-2 flex justify-center">
+            <Image src={leaves} alt="Leaves" height={40} />
+          </div>
+          <span className="text-sm text-neutral-400">Planted by Chester</span>
         </footer>
       </main>
     </>
