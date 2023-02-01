@@ -13,7 +13,7 @@ export function CardGridLayout({ children }: PropsWithChildren) {
         hidden: {},
         show: {
           transition: {
-            staggerChildren: 0.1,
+            staggerChildren: 0.15,
           },
         },
       }}

@@ -72,7 +72,7 @@ export function NavTabGroup() {
     <motion.div
       ref={wrapperRef}
       onMouseLeave={resetHighlight}
-      className="relative flex rounded-lg border border-neutral-200 bg-white/50 p-1 shadow-md backdrop-blur-md"
+      className="relative flex rounded-lg border border-neutral-200 bg-white/70 p-1 shadow-md backdrop-blur-md"
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -81,7 +81,7 @@ export function NavTabGroup() {
       <div
         ref={highlightRef}
         style={highlightStyles}
-        className="absolute left-0 -z-10 h-7 rounded bg-neutral-200 backdrop-blur-md transition-[width,transform,opacity]"
+        className="absolute left-0 -z-10 h-7 rounded bg-neutral-200 backdrop-blur transition-[width,transform,opacity]"
       />
       {tabs.map((tab) => (
         <NavTab

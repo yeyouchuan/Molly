@@ -15,7 +15,7 @@ export function ImageAndTextCard(props: ImageAndTextCardProps) {
     <div className="relative isolate flex h-full w-full flex-col justify-between">
       <Image
         src={props.imageUrl}
-        alt={props.label}
+        alt={props.heading}
         fill
         sizes={cardImageSizes(props.large)}
         className="-z-10 object-cover transition-transform group-hover:scale-105"

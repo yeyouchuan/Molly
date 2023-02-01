@@ -41,8 +41,7 @@ export function Card(props: CardProps) {
     <div
       className={classNames(
         props.large ? 'aspect-[2] sm:col-span-2' : 'aspect-square',
-        'px-1 pb-2',
-        'min-h-[60px]'
+        'px-1 pb-2'
       )}
     >
       <motion.div
