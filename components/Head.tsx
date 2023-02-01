@@ -7,12 +7,14 @@ type HeadProps = {
 
 export function Head({
   title,
-  description = 'Welcome to my digital garden 🌱',
+  description = 'Welcome to my digital garden, a little space on the interwebs that grows over time 🌱',
 }: HeadProps) {
   return (
     <NextHead>
       <title>
-        {typeof title === 'string' ? `Chester How | ${title}` : 'Chester How'}
+        {typeof title === 'string'
+          ? `Chester's Garden | ${title}`
+          : `Chester's Garden`}
       </title>
       <meta name="description" content={description} key="description" />
 
@@ -20,7 +22,9 @@ export function Head({
       <meta
         property="og:title"
         content={
-          typeof title === 'string' ? `Chester How | ${title}` : 'Chester How'
+          typeof title === 'string'
+            ? `Chester's Garden | ${title}`
+            : `Chester's Garden`
         }
         key="og:title"
       />

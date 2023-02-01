@@ -1,5 +1,7 @@
+import classNames from 'classnames';
 import { motion } from 'framer-motion';
 
+import { Tooltip } from '@/components/Tooltip';
 import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/framerMotionVariants';
 
 import { IntroCardLink } from './IntroCardLink';
@@ -12,8 +14,23 @@ export function IntroCard() {
     >
       <div className="h-full w-full p-4 sm:p-8">
         <h1 className="font-serif-variation font-serif text-2xl font-light !leading-tight text-neutral-400 sm:text-3xl lg:text-4xl">
-          Hello I’m <span className="text-neutral-900">Chester</span> 👋&nbsp;
-          Welcome to my digital garden 🌱 I like building{' '}
+          Hey there, I’m <span className="text-neutral-900">Chester</span>{' '}
+          👋&nbsp; Welcome to my{' '}
+          <Tooltip side="bottom" content="Click to read more!">
+            <a
+              href="https://lowercasedc.wordpress.com/2023/02/01/what-the-heck-is-a-digital-garden/"
+              className={classNames(
+                'rounded underline decoration-dotted transition-colors',
+                // State: focus
+                'focus-visible:ring-4 focus-visible:ring-blue-200',
+                // State: hover
+                'hover:text-neutral-500'
+              )}
+            >
+              digital garden
+            </a>
+          </Tooltip>{' '}
+          🌱 I like building{' '}
           <IntroCardLink href="/projects" decorationColor="orange">
             things
           </IntroCardLink>

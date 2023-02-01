@@ -43,8 +43,13 @@ export function IntroCardLink(props: IntroCardLinkProps) {
         target="_blank"
         rel="noreferrer"
         className={classNames(
-          'cursor-alias text-neutral-900 decoration-wavy underline-offset-4 hover:underline',
-          getTailwindColor()
+          'cursor-alias rounded text-neutral-900 decoration-wavy underline-offset-4',
+          getTailwindColor(),
+          // State: focus
+          'focus-visible:ring-4 focus-visible:ring-blue-200',
+          'focus:underline',
+          // State: hover
+          'hover:underline'
         )}
       >
         {props.children}
