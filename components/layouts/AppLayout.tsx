@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { PropsWithChildren } from 'react';
 
 import leaves from '@/public/leaves.png';
+import maple from '@/public/maple.gif';
 
 import { Head } from '../Head';
 import { Navbar } from '../Navbar';
@@ -32,11 +33,24 @@ export function Layout({ children }: PropsWithChildren) {
 
         {children}
 
-        <footer className="pt-36 pb-20 text-center">
-          <div className="mb-2 flex justify-center">
-            <Image src={leaves} alt="Leaves" height={40} />
+        <footer className="flex justify-center pt-36 pb-20">
+          <div className="group">
+            <div className="relative">
+              <Image
+                src={maple}
+                alt="maple"
+                height={70}
+                className="opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+              />
+              <Image
+                src={leaves}
+                alt="Leaves"
+                height={40}
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-500 group-hover:opacity-0"
+              />
+            </div>
+            <span className="text-sm text-neutral-400">Planted by Chester</span>
           </div>
-          <span className="text-sm text-neutral-400">Planted by Chester</span>
         </footer>
       </main>
     </>
