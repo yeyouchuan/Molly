@@ -41,7 +41,18 @@ export function Head({
         key="og:image"
       />
       <meta property="og:type" content="website" key="og:type" />
-      <meta property="og:site_name" content="Chester How" key="og:site_name" />
+      <meta
+        property="og:site_name"
+        content="Chester's Garden"
+        key="og:site_name"
+      />
+      <meta
+        property="og:url"
+        content={
+          process.env.VERCEL_URL ? 'https://' + process.env.VERCEL_URL : ''
+        }
+        key="og:url"
+      />
 
       {/* twitter */}
       <meta
@@ -52,7 +63,9 @@ export function Head({
       <meta
         name="twitter:title"
         content={
-          typeof title === 'string' ? `Chester How | ${title}` : 'Chester How'
+          typeof title === 'string'
+            ? `Chester's Garden | ${title}`
+            : `Chester's Garden`
         }
         key="twitter:title"
       />
