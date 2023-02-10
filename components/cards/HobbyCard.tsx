@@ -1,9 +1,9 @@
+import { HobbyProperties } from '@/lib/utils/type-guards/card-types';
 import {
   isImageAndTextCardProperties,
   isImageCardProperties,
   isTextCardProperties,
-} from '@/lib/utils/hobbyCardTypeGuards';
-import { HobbyProperties } from '@/lib/utils/isHobbyProperties';
+} from '@/lib/utils/type-guards/hobby-card-types';
 
 import { ImageAndTextCard, ImageCard, TextCard } from './hobbies';
 

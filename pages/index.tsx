@@ -3,7 +3,7 @@ import { InferGetStaticPropsType } from 'next';
 import { Card } from '@/components/Card';
 import { IntroCard } from '@/components/cards';
 import { CardGridLayout } from '@/components/layouts/CardGridLayout';
-import { supabase } from '@/lib/supabaseClient';
+import { supabase } from '@/lib/supabase/supabaseClient';
 
 export default function Home(
   props: InferGetStaticPropsType<typeof getStaticProps>

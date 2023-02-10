@@ -1,5 +1,5 @@
-import { isLink, Link } from './typeGuards/isLink';
-import { isTag, Tag } from './typeGuards/isTag';
+import { isLink, Link } from '../isLink';
+import { isTag, Tag } from '../isTag';
 
 const readingTypes = ['Books'] as const;
 type ReadingType = (typeof readingTypes)[number];

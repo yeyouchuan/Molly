@@ -1,4 +1,4 @@
-import { isLink, Link } from './typeGuards/isLink';
+import { isLink, Link } from '../isLink';
 
 export type ProjectProperties = {
   name: string;

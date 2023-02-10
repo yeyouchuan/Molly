@@ -1,5 +1,5 @@
-import { isLink, Link } from '../typeGuards/isLink';
-import { isTag, Tag } from '../typeGuards/isTag';
+import { isLink, Link } from '../isLink';
+import { isTag, Tag } from '../isTag';
 
 export type TextCardProperties = {
   tags: Tag[];

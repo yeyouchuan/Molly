@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 
-import { Link } from '@/lib/utils/typeGuards/isLink';
+import { Link } from '@/lib/utils/type-guards/isLink';
 
 import { Tooltip } from './Tooltip';
 

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { cardImageSizes } from '@/lib/utils/cardImageSizes';
-import { ProjectProperties } from '@/lib/utils/isProjectProperties';
+import { ProjectProperties } from '@/lib/utils/type-guards/card-types';
 
 import { CardHeader } from '../CardHeader';
 

@@ -20,7 +20,7 @@ export function IntroCard() {
             <a
               href="https://lowercasedc.wordpress.com/2023/02/01/what-the-heck-is-a-digital-garden/"
               className={classNames(
-                'rounded underline decoration-dotted transition-colors',
+                'cursor-alias rounded underline decoration-dotted transition-colors',
                 // State: focus
                 'focus-visible:ring-4 focus-visible:ring-blue-200',
                 // State: hover

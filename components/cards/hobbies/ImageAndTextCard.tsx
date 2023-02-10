@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { CardHeader } from '@/components/CardHeader';
 import { cardImageSizes } from '@/lib/utils/cardImageSizes';
-import { ImageAndTextCardProperties } from '@/lib/utils/hobbyCardTypeGuards';
+import { ImageAndTextCardProperties } from '@/lib/utils/type-guards/hobby-card-types';
 
 type ImageAndTextCardProps = ImageAndTextCardProperties & {
   label: string;

@@ -1,12 +1,14 @@
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
 
-import { Database } from '@/lib/database.types';
 import { FADE_DOWN_ANIMATION_VARIANTS } from '@/lib/framerMotionVariants';
-import { isHobbyProperties } from '@/lib/utils/isHobbyProperties';
-import { isProjectProperties } from '@/lib/utils/isProjectProperties';
-import { isReadingProperties } from '@/lib/utils/isReadingProperties';
-import { isWritingProperties } from '@/lib/utils/isWritingProperties';
+import { Database } from '@/lib/supabase/database.types';
+import {
+  isHobbyProperties,
+  isProjectProperties,
+  isReadingProperties,
+  isWritingProperties,
+} from '@/lib/utils/type-guards/card-types';
 
 import { ProjectCard, ReadingCard, WritingCard } from './cards';
 import { HobbyCard } from './cards/HobbyCard';

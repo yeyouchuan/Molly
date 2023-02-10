@@ -1,4 +1,4 @@
-import { TextCardProperties } from '@/lib/utils/hobbyCardTypeGuards';
+import { TextCardProperties } from '@/lib/utils/type-guards/hobby-card-types';
 
 import { CardHeader } from '../../CardHeader';
 import { StatusTag } from '../../StatusTag';

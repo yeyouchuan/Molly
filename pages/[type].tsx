@@ -7,7 +7,7 @@ import {
 import { Card } from '@/components/Card';
 import { Head } from '@/components/Head';
 import { CardGridLayout } from '@/components/layouts/CardGridLayout';
-import { supabase } from '@/lib/supabaseClient';
+import { supabase } from '@/lib/supabase/supabaseClient';
 import { capitalize } from '@/lib/utils/capitalize';
 
 export default function TypePage(

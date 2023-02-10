@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 
-import { ReadingProperties } from '@/lib/utils/isReadingProperties';
+import { ReadingProperties } from '@/lib/utils/type-guards/card-types';
 
 import { CardHeader } from '../CardHeader';
 import { StatusTag } from '../StatusTag';

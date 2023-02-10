@@ -1,4 +1,4 @@
-import { WritingProperties } from '@/lib/utils/isWritingProperties';
+import { WritingProperties } from '@/lib/utils/type-guards/card-types';
 
 import { CardHeader } from '../CardHeader';
 

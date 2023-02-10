@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "vercel:env-pull": "vercel env pull .env.local",
-    "supabase:gen-types": "supabase gen types typescript --project-id ghepxtexbwweoynirspy --schema public > lib/database.types.ts"
+    "supabase:gen-types": "supabase gen types typescript --project-id ghepxtexbwweoynirspy --schema public > lib/supabase/database.types.ts"
   },
   "dependencies": {
     "@next/font": "13.1.2",

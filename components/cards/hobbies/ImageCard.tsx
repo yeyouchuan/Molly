@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import Image from 'next/image';
 
 import { cardImageSizes } from '@/lib/utils/cardImageSizes';
-import { ImageCardProperties } from '@/lib/utils/hobbyCardTypeGuards/isImageCardProperties';
+import { ImageCardProperties } from '@/lib/utils/type-guards/hobby-card-types';
 
 import { CardHeader } from '../../CardHeader';
 
