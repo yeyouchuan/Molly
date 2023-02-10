@@ -48,12 +48,14 @@ export function CardHeader(props: CardHeaderProps) {
             target="_blank"
             rel="noreferrer"
             className={classNames(
-              'flex h-8 w-8 items-center justify-center rounded-full',
+              'flex h-8 w-8 items-center justify-center rounded-full transition-colors',
               // State: focus
               'focus-visible:ring-4 focus-visible:ring-blue-200',
               'group-focus-within:bg-white group-focus-within:text-neutral-900',
+              'group-focus-within:shadow-skeuo',
               // State: hover
-              'cursor-alias transition-colors group-hover:bg-white group-hover:text-neutral-900'
+              'cursor-alias group-hover:bg-white group-hover:text-neutral-900',
+              'group-hover:shadow-skeuo'
             )}
           >
             ↗

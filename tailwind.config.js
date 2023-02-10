@@ -13,6 +13,9 @@ module.exports = {
         sans: ['var(--font-inter)', ...fontFamily.sans],
         serif: ['var(--font-fraunces)', ...fontFamily.serif],
       },
+      boxShadow: {
+        skeuo: '0 0 0 1px rgb(0, 0, 0, .05), 0 1px 0 0 rgb(0, 0, 0, .1)',
+      },
       keyframes: {
         enter: {
           from: {
