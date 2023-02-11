@@ -52,7 +52,7 @@ export function Card(props: CardProps) {
           // State: focus
           'focus-within:bg-neutral-100',
           // State: hover
-          'group-hover:bg-neutral-100'
+          'hover:bg-neutral-100'
         )}
         variants={FADE_DOWN_ANIMATION_VARIANTS}
       >

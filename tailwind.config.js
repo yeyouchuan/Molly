@@ -15,6 +15,8 @@ module.exports = {
       },
       boxShadow: {
         skeuo: '0 0 0 1px rgb(0, 0, 0, .05), 0 1px 0 0 rgb(0, 0, 0, .1)',
+        'inset-skeuo':
+          'inset 0 0 0 1px rgb(0, 0, 0, .1), inset 0 -2px 0 1px rgb(0, 0, 0, .1)',
       },
       keyframes: {
         enter: {
