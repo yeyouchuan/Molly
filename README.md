@@ -13,6 +13,3 @@ This is the repository for my digital garden ([chester.how](https://chester.how)
 - Framer Motion
 - Supabase
 - Vercel
-
-
-

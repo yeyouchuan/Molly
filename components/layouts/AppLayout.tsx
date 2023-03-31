@@ -9,7 +9,6 @@ import { Head } from '../Head';
 import { Navbar } from '../Navbar';
 
 const inter = Inter({
-  weight: ['300', '400'],
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',

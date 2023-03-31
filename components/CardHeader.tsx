@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 import { Link } from '@/lib/utils/type-guards/isLink';
 
+import { ArrowUpRightIcon } from './icons/ArrowUpRightIcon';
 import { Tooltip } from './Tooltip';
 
 type CardHeaderProps = {
@@ -58,7 +59,7 @@ export function CardHeader(props: CardHeaderProps) {
               'group-hover:shadow-skeuo'
             )}
           >
-            ↗
+            <ArrowUpRightIcon className="h-4 w-4" />
           </a>
         </Tooltip>
       )}
