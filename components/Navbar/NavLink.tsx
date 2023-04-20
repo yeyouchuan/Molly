@@ -10,7 +10,6 @@ export function NavLink(props: NavLinkProps) {
     <a
       href={props.href}
       target="_blank"
-      rel="noreferrer"
       className={classNames(
         ' rounded py-1 px-2 text-sm text-neutral-400',
         // Text decoration

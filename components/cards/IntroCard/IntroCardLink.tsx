@@ -41,7 +41,6 @@ export function IntroCardLink(props: IntroCardLinkProps) {
       <a
         href={props.href}
         target="_blank"
-        rel="noreferrer"
         className={classNames(
           'cursor-alias rounded text-neutral-900 decoration-wavy underline-offset-4',
           getTailwindColor(),
